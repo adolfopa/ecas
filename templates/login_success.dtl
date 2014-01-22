@@ -1,0 +1,23 @@
+{% extends "base.dtl" %}
+
+{% block content %}
+<div class="container">
+  <h1>eCAS - Login successful</h1>
+
+  {% if warn %}
+  <div class="alert alert-warning">
+    <span class="glyphicon glyphicon-warning-sign"></span>
+
+    You are going to be logged-in into {{service}}.
+    To proceed, click on <a href="{{target}}">this link</a>; you can also
+    <a href="/logout?url={{service}}">close the session</a>.
+  </div>
+  {% else %}
+  <div class="alert alert-success">
+    <span class="glyphicon glyphicon-ok"></span>
+
+    You've been logged-in succesfully (<a href="/logout">Close session</a>)
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

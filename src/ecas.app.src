@@ -1,0 +1,26 @@
+%%-*- mode: erlang -*-
+{application, ecas,
+ [
+  {description, "ecas"},
+  {vsn, "1"},
+  {modules, []},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  inets,
+                  crypto,
+                  mochiweb,
+                  webmachine
+                 ]},
+  {mod, { ecas_app, []}},
+  {env, [
+         {auth_strategy, {ecas_auth, succeed}},
+         {cookie, [{path, "/"},
+                   {domain, "localhost"}]},
+         {ttl, [
+                {login_ticket, 60000000},
+                {service_ticket, 360000000},
+                {cookie, 360000000}
+               ]}]}
+ ]}.

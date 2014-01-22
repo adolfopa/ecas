@@ -1,0 +1,16 @@
+{% extends "base.dtl" %}
+
+{% block content %}
+<div class="container">
+  <h1>eCAS - Logout successful</h1>
+  <div class="alert alert-success">
+    <span class="glyphicon glyphicon-ok"></span>
+    You've been logged-out from
+    {% if url %}
+    <a href="{{url}}">{{url}}</a> (<a href="/login?service={{url}}">Login</a>)
+    {% else %}
+    the application (<a href="/login">Login</a>)
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
